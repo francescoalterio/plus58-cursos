@@ -1,0 +1,98 @@
+{
+  "courseId": "curso-python-basico",
+  "title": "Programación Básica en Python",
+  "summary": "Fundamentos de Python: entorno, sintaxis, estructuras de datos básicas, control de flujo, funciones, módulos, errores, archivos y POO.",
+  "order": 4,
+  "lessons": [
+    {
+      "slug": "curso-python-basico--01-entorno-instalacion",
+      "file": "01. entorno_instalacion.md",
+      "title": "01 Entorno e Instalación",
+      "order": 1
+    },
+    {
+      "slug": "curso-python-basico--02-operadores-basicos",
+      "file": "02. operadores_basicos.md",
+      "title": "02 Operadores Básicos",
+      "order": 2
+    },
+    {
+      "slug": "curso-python-basico--03-variables-tipos-datos",
+      "file": "03. variables_y_tipos_datos.md",
+      "title": "03 Variables y Tipos de Datos",
+      "order": 3
+    },
+    {
+      "slug": "curso-python-basico--04-control-flujo-condicionales-bucles",
+      "file": "04. control_flujo_condicionales_bucles.md",
+      "title": "04 Control de Flujo: Condicionales y Bucles",
+      "order": 4
+    },
+    {
+      "slug": "curso-python-basico--05-listas",
+      "file": "05. listas.md",
+      "title": "05 Listas",
+      "order": 5
+    },
+    {
+      "slug": "curso-python-basico--06-tuplas-desempaquetado",
+      "file": "06. tuplas_y_desempaquetado.md",
+      "title": "06 Tuplas y Desempaquetado",
+      "order": 6
+    },
+    {
+      "slug": "curso-python-basico--07-diccionarios",
+      "file": "07. diccionarios.md",
+      "title": "07 Diccionarios",
+      "order": 7
+    },
+    {
+      "slug": "curso-python-basico--08-break-continue",
+      "file": "08. break_y_continue.md",
+      "title": "08 Break y Continue",
+      "order": 8
+    },
+    {
+      "slug": "curso-python-basico--09-strings-metodos",
+      "file": "09. strings_metodos.md",
+      "title": "09 Strings y Métodos",
+      "order": 9
+    },
+    {
+      "slug": "curso-python-basico--10-funciones",
+      "file": "10. funciones.md",
+      "title": "10 Funciones",
+      "order": 10
+    },
+    {
+      "slug": "curso-python-basico--11-operadores-asignacion-compuesta",
+      "file": "11. operadores_asignacion_compuesta.md",
+      "title": "11 Operadores de Asignación Compuesta",
+      "order": 11
+    },
+    {
+      "slug": "curso-python-basico--12-slicing",
+      "file": "12. slicing.md",
+      "title": "12 Slicing",
+      "order": 12
+    },
+    {
+      "slug": "curso-python-basico--13-modulos-imports",
+      "file": "13. modulos_imports.md",
+      "title": "13 Módulos e Imports",
+      "order": 13
+    },
+    {
+      "slug": "curso-python-basico--14-manejo-errores-archivos",
+      "file": "14. manejo_errores_y_archivos.md",
+      "title": "14 Manejo de Errores y Archivos",
+      "order": 14
+    },
+    {
+      "slug": "curso-python-basico--15-poo",
+      "file": "15. poo.md",
+      "title": "15 POO (Programación Orientada a Objetos)",
+      "order": 15
+    }
+  ]
+}

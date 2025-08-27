@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html {
+    @apply bg-neutral-950 text-neutral-100;
+  }
+  body {
+    @apply min-h-screen font-sans antialiased;
+  }
+}
+
+/* Scrollbar minimal */
+* {
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #14532d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
+
+.prose-dark h1,
+.prose-dark h2,
+.prose-dark h3 {
+  @apply text-brand-foreground;
+}
+
+/* Highlight.js custom dark theme aligned with brand */
+.hljs {
+  background: #0d0f0d;
+  color: #e5e7eb;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+  color: #22c55e;
+  font-weight: 600;
+}
+.hljs-function .hljs-title,
+.hljs-title.function_ {
+  color: #86efac;
+}
+.hljs-string,
+.hljs-attr,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #4ade80;
+}
+.hljs-number,
+.hljs-variable,
+.hljs-attribute,
+.hljs-params {
+  color: #34d399;
+}
+.hljs-comment {
+  color: #525252;
+  font-style: italic;
+}
+.hljs-meta,
+.hljs-symbol,
+.hljs-bullet {
+  color: #10b981;
+}
+.hljs-built_in,
+.hljs-type {
+  color: #a7f3d0;
+}
+.hljs-addition {
+  color: #16a34a;
+}
+.hljs-deletion {
+  color: #f87171;
+}
+
+@layer utilities {
+  /* Markdown tables & blockquotes */
+  .prose table {
+    @apply text-sm;
+  }
+  .prose thead tr {
+    @apply border-b border-neutral-800;
+  }
+  .prose tbody tr {
+    @apply border-b border-neutral-900/60 hover:bg-neutral-900/40 transition;
+  }
+  .prose blockquote {
+    @apply border-l-4 border-brand/60 bg-neutral-900/50 rounded-r px-4 py-2 text-neutral-300 italic;
+  }
+  /* Improve list spacing */
+  .prose ul > li,
+  .prose ol > li {
+    @apply my-1;
+  }
+  /* Anchor autolinks subtle */
+  .prose h2 .anchor,
+  .prose h3 .anchor,
+  .prose h4 .anchor {
+    @apply opacity-0 transition;
+  }
+  .prose h2:hover .anchor,
+  .prose h3:hover .anchor,
+  .prose h4:hover .anchor {
+    @apply opacity-60;
+  }
+}

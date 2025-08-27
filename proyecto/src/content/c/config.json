@@ -1,0 +1,549 @@
+{
+  "courseId": "c",
+  "title": "Lenguaje C desde Cero",
+  "summary": "Fundamentos del lenguaje C: sintaxis, memoria y compilación.",
+  "order": 2,
+  "lessons": [
+    {
+      "slug": "c--1-1-introduccion",
+      "file": "proyecto-c-documentacion/1.1-Introduccion.md",
+      "title": "1.1 Introducción",
+      "order": 1
+    },
+    {
+      "slug": "c--1-2-variables-y-expresiones-aritmeticas",
+      "file": "proyecto-c-documentacion/1.2-Variables-y-expresiones-aritmeticas.md",
+      "title": "1.2 Variables y Expresiones Aritméticas",
+      "order": 2
+    },
+    {
+      "slug": "c--1-3-la-proposicion-for",
+      "file": "proyecto-c-documentacion/1.3-La-proposicion-for.md",
+      "title": "1.3 La Proposición for",
+      "order": 3
+    },
+    {
+      "slug": "c--1-4-constantes-simbolicas",
+      "file": "proyecto-c-documentacion/1.4-Constantes-simbolicas.md",
+      "title": "1.4 Constantes Simbólicas",
+      "order": 4
+    },
+    {
+      "slug": "c--1-5-entrada-y-salida-de-caracteres",
+      "file": "proyecto-c-documentacion/1.5-Entrada-y-salida-de-caracteres.md",
+      "title": "1.5 Entrada y Salida de Caracteres",
+      "order": 5
+    },
+    {
+      "slug": "c--1-5-1-copia-de-archivos",
+      "file": "proyecto-c-documentacion/1.5.1-Copia-de-archivos.md",
+      "title": "1.5.1 Copia de Archivos",
+      "order": 6
+    },
+    {
+      "slug": "c--1-5-2-conteo-de-caracteres",
+      "file": "proyecto-c-documentacion/1.5.2-Conteo-de-caracteres.md",
+      "title": "1.5.2 Conteo de Caracteres",
+      "order": 7
+    },
+    {
+      "slug": "c--1-5-3-conteo-de-lineas",
+      "file": "proyecto-c-documentacion/1.5.3-Conteo-de-lineas.md",
+      "title": "1.5.3 Conteo de Líneas",
+      "order": 8
+    },
+    {
+      "slug": "c--1-5-4-conteo-de-palabras",
+      "file": "proyecto-c-documentacion/1.5.4-Conteo-de-palabras.md",
+      "title": "1.5.4 Conteo de Palabras",
+      "order": 9
+    },
+    {
+      "slug": "c--1-6-arreglos",
+      "file": "proyecto-c-documentacion/1.6-Arreglos.md",
+      "title": "1.6 Arreglos",
+      "order": 10
+    },
+    {
+      "slug": "c--1-7-funciones",
+      "file": "proyecto-c-documentacion/1.7-Funciones.md",
+      "title": "1.7 Funciones",
+      "order": 11
+    },
+    {
+      "slug": "c--1-8-argumentos-llamada-por-valor",
+      "file": "proyecto-c-documentacion/1.8-Argumentos-llamada-por-valor.md",
+      "title": "1.8 Argumentos (Llamada por Valor)",
+      "order": 12
+    },
+    {
+      "slug": "c--1-9-arreglos-de-caracteres",
+      "file": "proyecto-c-documentacion/1.9-Arreglos-de-caracteres.md",
+      "title": "1.9 Arreglos de Caracteres",
+      "order": 13
+    },
+    {
+      "slug": "c--1-10-variables-externas-y-alcance",
+      "file": "proyecto-c-documentacion/1.10-Variables-externas-y-alcance.md",
+      "title": "1.10 Variables Externas y Alcance",
+      "order": 14
+    },
+
+    {
+      "slug": "c--2-1-nombres-de-variables",
+      "file": "proyecto-c-documentacion/2.1-Nombres-de-variables.md",
+      "title": "2.1 Nombres de Variables",
+      "order": 15
+    },
+    {
+      "slug": "c--2-2-tipos-y-tamanos-de-datos",
+      "file": "proyecto-c-documentacion/2.2-Tipos-y-tamanos-de-datos.md",
+      "title": "2.2 Tipos y Tamaños de Datos",
+      "order": 16
+    },
+    {
+      "slug": "c--2-3-constantes",
+      "file": "proyecto-c-documentacion/2.3-Constantes.md",
+      "title": "2.3 Constantes",
+      "order": 17
+    },
+    {
+      "slug": "c--2-4-declaraciones",
+      "file": "proyecto-c-documentacion/2.4-Declaraciones.md",
+      "title": "2.4 Declaraciones",
+      "order": 18
+    },
+    {
+      "slug": "c--2-5-operadores-aritmeticos",
+      "file": "proyecto-c-documentacion/2.5-Operadores-aritmeticos.md",
+      "title": "2.5 Operadores Aritméticos",
+      "order": 19
+    },
+    {
+      "slug": "c--2-6-operadores-de-relacion-y-logicos",
+      "file": "proyecto-c-documentacion/2.6-Operadores-de-relacion-y-logicos.md",
+      "title": "2.6 Operadores de Relación y Lógicos",
+      "order": 20
+    },
+    {
+      "slug": "c--2-7-conversiones-de-tipo",
+      "file": "proyecto-c-documentacion/2.7-Conversiones-de-tipo.md",
+      "title": "2.7 Conversiones de Tipo",
+      "order": 21
+    },
+    {
+      "slug": "c--2-8-operadores-de-incremento-y-decremento",
+      "file": "proyecto-c-documentacion/2.8-Operadores-de-incremento-y-decremento.md",
+      "title": "2.8 Operadores de Incremento y Decremento",
+      "order": 22
+    },
+    {
+      "slug": "c--2-9-operadores-para-manejo-de-bits",
+      "file": "proyecto-c-documentacion/2.9-Operadores-para-manejo-de-bits.md",
+      "title": "2.9 Operadores para Manejo de Bits",
+      "order": 23
+    },
+    {
+      "slug": "c--2-10-operadores-de-asignacion-y-expresiones",
+      "file": "proyecto-c-documentacion/2.10-Operadores-de-asignacion-y-expresiones.md",
+      "title": "2.10 Operadores de Asignación y Expresiones",
+      "order": 24
+    },
+    {
+      "slug": "c--2-11-expresiones-condicionales",
+      "file": "proyecto-c-documentacion/2.11-Expresiones-condicionales.md",
+      "title": "2.11 Expresiones Condicionales",
+      "order": 25
+    },
+    {
+      "slug": "c--2-12-precedencia-y-orden-de-evaluacion",
+      "file": "proyecto-c-documentacion/2.12-Precedencia-y-orden-de-evaluacion.md",
+      "title": "2.12 Precedencia y Orden de Evaluación",
+      "order": 26
+    },
+
+    {
+      "slug": "c--3-1-proposiciones-y-bloques",
+      "file": "proyecto-c-documentacion/3.1-Proposiciones-y-bloques.md",
+      "title": "3.1 Proposiciones y Bloques",
+      "order": 27
+    },
+    {
+      "slug": "c--3-2-if-else",
+      "file": "proyecto-c-documentacion/3.2-if-else.md",
+      "title": "3.2 if-else",
+      "order": 28
+    },
+    {
+      "slug": "c--3-3-else-if",
+      "file": "proyecto-c-documentacion/3.3-else-if.md",
+      "title": "3.3 else-if",
+      "order": 29
+    },
+    {
+      "slug": "c--3-4-switch",
+      "file": "proyecto-c-documentacion/3.4-switch.md",
+      "title": "3.4 switch",
+      "order": 30
+    },
+    {
+      "slug": "c--3-5-ciclos-while-y-for",
+      "file": "proyecto-c-documentacion/3.5-Ciclos-while-y-for.md",
+      "title": "3.5 Ciclos while y for",
+      "order": 31
+    },
+    {
+      "slug": "c--3-6-ciclos-do-while",
+      "file": "proyecto-c-documentacion/3.6-Ciclos-do-while.md",
+      "title": "3.6 Ciclos do-while",
+      "order": 32
+    },
+    {
+      "slug": "c--3-7-break-y-continue",
+      "file": "proyecto-c-documentacion/3.7-break-y-continue.md",
+      "title": "3.7 break y continue",
+      "order": 33
+    },
+    {
+      "slug": "c--3-8-goto-y-etiquetas",
+      "file": "proyecto-c-documentacion/3.8-goto-y-etiquetas.md",
+      "title": "3.8 goto y Etiquetas",
+      "order": 34
+    },
+
+    {
+      "slug": "c--4-1-conceptos-basicos-de-funciones",
+      "file": "proyecto-c-documentacion/4.1-Conceptos-basicos-de-funciones.md",
+      "title": "4.1 Conceptos Básicos de Funciones",
+      "order": 35
+    },
+    {
+      "slug": "c--4-2-funciones-que-regresan-valores-no-enteros",
+      "file": "proyecto-c-documentacion/4.2-Funciones-que-regresan-valores-no-enteros.md",
+      "title": "4.2 Funciones que Regresan Valores no Enteros",
+      "order": 36
+    },
+    {
+      "slug": "c--4-3-variables-externas",
+      "file": "proyecto-c-documentacion/4.3-Variables-externas.md",
+      "title": "4.3 Variables Externas",
+      "order": 37
+    },
+    {
+      "slug": "c--4-4-reglas-de-alcance",
+      "file": "proyecto-c-documentacion/4.4-Reglas-de-alcance.md",
+      "title": "4.4 Reglas de Alcance",
+      "order": 38
+    },
+    {
+      "slug": "c--4-5-archivo-de-encabezamiento-header",
+      "file": "proyecto-c-documentacion/4.5-Archivo-de-encabezamiento-header.md",
+      "title": "4.5 Archivo de Encabezamiento (Header)",
+      "order": 39
+    },
+    {
+      "slug": "c--4-6-variables-estaticas",
+      "file": "proyecto-c-documentacion/4.6-Variables-estaticas.md",
+      "title": "4.6 Variables Estáticas",
+      "order": 40
+    },
+    {
+      "slug": "c--4-7-variables-tipo-registro",
+      "file": "proyecto-c-documentacion/4.7-Variables-tipo-registro.md",
+      "title": "4.7 Variables Tipo Registro",
+      "order": 41
+    },
+    {
+      "slug": "c--4-8-estructura-de-bloques",
+      "file": "proyecto-c-documentacion/4.8-Estructura-de-bloques.md",
+      "title": "4.8 Estructura de Bloques",
+      "order": 42
+    },
+    {
+      "slug": "c--4-9-inicializacion",
+      "file": "proyecto-c-documentacion/4.9-Inicializacion.md",
+      "title": "4.9 Inicialización",
+      "order": 43
+    },
+    {
+      "slug": "c--4-10-recursividad",
+      "file": "proyecto-c-documentacion/4.10-Recursividad.md",
+      "title": "4.10 Recursividad",
+      "order": 44
+    },
+    {
+      "slug": "c--4-11-el-preprocesador-de-c",
+      "file": "proyecto-c-documentacion/4.11-El-preprocesador-de-C.md",
+      "title": "4.11 El Preprocesador de C",
+      "order": 45
+    },
+    {
+      "slug": "c--4-11-1-inclusion-de-archivos",
+      "file": "proyecto-c-documentacion/4.11.1-Inclusion-de-archivos.md",
+      "title": "4.11.1 Inclusión de Archivos",
+      "order": 46
+    },
+    {
+      "slug": "c--4-11-2-substitucion-de-macros",
+      "file": "proyecto-c-documentacion/4.11.2-Substitucion-de-macros.md",
+      "title": "4.11.2 Substitución de Macros",
+      "order": 47
+    },
+    {
+      "slug": "c--4-11-3-inclusion-condicional",
+      "file": "proyecto-c-documentacion/4.11.3-Inclusion-condicional.md",
+      "title": "4.11.3 Inclusión Condicional",
+      "order": 48
+    },
+
+    {
+      "slug": "c--5-1-apuntadores-y-direcciones",
+      "file": "proyecto-c-documentacion/5.1-Apuntadores-y-direcciones.md",
+      "title": "5.1 Apuntadores y Direcciones",
+      "order": 49
+    },
+    {
+      "slug": "c--5-2-apuntadores-y-argumentos-de-funciones",
+      "file": "proyecto-c-documentacion/5.2-Apuntadores-y-argumentos-de-funciones.md",
+      "title": "5.2 Apuntadores y Argumentos de Funciones",
+      "order": 50
+    },
+    {
+      "slug": "c--5-3-apuntadores-y-arreglos",
+      "file": "proyecto-c-documentacion/5.3-Apuntadores-y-arreglos.md",
+      "title": "5.3 Apuntadores y Arreglos",
+      "order": 51
+    },
+    {
+      "slug": "c--5-4-aritmetica-de-direcciones",
+      "file": "proyecto-c-documentacion/5.4-Aritmetica-de-direcciones.md",
+      "title": "5.4 Aritmética de Direcciones",
+      "order": 52
+    },
+    {
+      "slug": "c--5-5-apuntadores-a-caracteres-y-funciones",
+      "file": "proyecto-c-documentacion/5.5-Apuntadores-a-caracteres-y-funciones.md",
+      "title": "5.5 Apuntadores a Caracteres y Funciones",
+      "order": 53
+    },
+    {
+      "slug": "c--5-6-arreglos-de-apuntadores-apuntadores-a-apuntadores",
+      "file": "proyecto-c-documentacion/5.6-Arreglos-de-apuntadores-apuntadores-a-apuntadores.md",
+      "title": "5.6 Arreglos de Apuntadores / Apuntadores a Apuntadores",
+      "order": 54
+    },
+    {
+      "slug": "c--5-7-arreglos-multidimensionales",
+      "file": "proyecto-c-documentacion/5.7-Arreglos-multidimensionales.md",
+      "title": "5.7 Arreglos Multidimensionales",
+      "order": 55
+    },
+    {
+      "slug": "c--5-8-inicializacion-de-arreglos-de-apuntadores",
+      "file": "proyecto-c-documentacion/5.8-Inicializacion-de-arreglos-de-apuntadores.md",
+      "title": "5.8 Inicialización de Arreglos de Apuntadores",
+      "order": 56
+    },
+    {
+      "slug": "c--5-9-apuntadores-vs-arreglos-multidimensionales",
+      "file": "proyecto-c-documentacion/5.9-Apuntadores-vs-arreglos-multidimensionales.md",
+      "title": "5.9 Apuntadores vs Arreglos Multidimensionales",
+      "order": 57
+    },
+    {
+      "slug": "c--5-10-argumentos-en-la-linea-de-ordenes",
+      "file": "proyecto-c-documentacion/5.10-Argumentos-en-la-linea-de-ordenes.md",
+      "title": "5.10 Argumentos en la Línea de Órdenes",
+      "order": 58
+    },
+    {
+      "slug": "c--5-11-apuntadores-a-funciones",
+      "file": "proyecto-c-documentacion/5.11-Apuntadores-a-funciones.md",
+      "title": "5.11 Apuntadores a Funciones",
+      "order": 59
+    },
+    {
+      "slug": "c--5-12-declaraciones-complicadas",
+      "file": "proyecto-c-documentacion/5.12-Declaraciones-complicadas.md",
+      "title": "5.12 Declaraciones Complicadas",
+      "order": 60
+    },
+
+    {
+      "slug": "c--6-1-conceptos-basicos-sobre-estructuras",
+      "file": "proyecto-c-documentacion/6.1-Conceptos-basicos-sobre-estructuras.md",
+      "title": "6.1 Conceptos Básicos sobre Estructuras",
+      "order": 61
+    },
+    {
+      "slug": "c--6-2-estructuras-y-funciones",
+      "file": "proyecto-c-documentacion/6.2-Estructuras-y-funciones.md",
+      "title": "6.2 Estructuras y Funciones",
+      "order": 62
+    },
+    {
+      "slug": "c--6-3-arreglos-de-estructuras",
+      "file": "proyecto-c-documentacion/6.3-Arreglos-de-estructuras.md",
+      "title": "6.3 Arreglos de Estructuras",
+      "order": 63
+    },
+    {
+      "slug": "c--6-4-apuntadores-a-estructuras",
+      "file": "proyecto-c-documentacion/6.4-Apuntadores-a-estructuras.md",
+      "title": "6.4 Apuntadores a Estructuras",
+      "order": 64
+    },
+    {
+      "slug": "c--6-5-estructuras-autorreferenciadas",
+      "file": "proyecto-c-documentacion/6.5-Estructuras-autorreferenciadas.md",
+      "title": "6.5 Estructuras Autorreferenciadas",
+      "order": 65
+    },
+    {
+      "slug": "c--6-6-listas-enlazadas",
+      "file": "proyecto-c-documentacion/6.6-Listas-enlazadas.md",
+      "title": "6.6 Listas Enlazadas",
+      "order": 66
+    },
+    {
+      "slug": "c--6-7-estructuras-como-argumentos-de-funcion",
+      "file": "proyecto-c-documentacion/6.7-Estructuras-como-argumentos-de-funcion.md",
+      "title": "6.7 Estructuras como Argumentos de Función",
+      "order": 67
+    },
+    {
+      "slug": "c--6-8-estructuras-como-valores-de-retorno",
+      "file": "proyecto-c-documentacion/6.8-Estructuras-como-valores-de-retorno.md",
+      "title": "6.8 Estructuras como Valores de Retorno",
+      "order": 68
+    },
+    {
+      "slug": "c--6-9-tipos-union",
+      "file": "proyecto-c-documentacion/6.9-Tipos-union.md",
+      "title": "6.9 Tipos Unión",
+      "order": 69
+    },
+
+    {
+      "slug": "c--7-1-definicion-de-archivos",
+      "file": "proyecto-c-documentacion/7.1-Definicion-de-archivos.md",
+      "title": "7.1 Definición de Archivos",
+      "order": 70
+    },
+    {
+      "slug": "c--7-2-apertura-y-cierre-de-archivos",
+      "file": "proyecto-c-documentacion/7.2-Apertura-y-cierre-de-archivos.md",
+      "title": "7.2 Apertura y Cierre de Archivos",
+      "order": 71
+    },
+    {
+      "slug": "c--7-3-lectura-y-escritura-de-archivos",
+      "file": "proyecto-c-documentacion/7.3-Lectura-y-escritura-de-archivos.md",
+      "title": "7.3 Lectura y Escritura de Archivos",
+      "order": 72
+    },
+    {
+      "slug": "c--7-4-archivos-binarios",
+      "file": "proyecto-c-documentacion/7.4-Archivos-binarios.md",
+      "title": "7.4 Archivos Binarios",
+      "order": 73
+    },
+    {
+      "slug": "c--7-5-acceso-aleatorio-en-archivos",
+      "file": "proyecto-c-documentacion/7.5-Acceso-aleatorio-en-archivos.md",
+      "title": "7.5 Acceso Aleatorio en Archivos",
+      "order": 74
+    },
+    {
+      "slug": "c--7-6-errores-en-archivos",
+      "file": "proyecto-c-documentacion/7.6-Errores-en-archivos.md",
+      "title": "7.6 Errores en Archivos",
+      "order": 75
+    },
+    {
+      "slug": "c--7-7-ejemplo-completo-de-manejo-de-archivos",
+      "file": "proyecto-c-documentacion/7.7-Ejemplo-completo-de-manejo-de-archivos.md",
+      "title": "7.7 Ejemplo Completo de Manejo de Archivos",
+      "order": 76
+    },
+    {
+      "slug": "c--7-8-otras-funciones",
+      "file": "proyecto-c-documentacion/7.8-Otras-funciones.md",
+      "title": "7.8 Otras Funciones",
+      "order": 77
+    },
+    {
+      "slug": "c--7-8-1-operaciones-sobre-cadenas",
+      "file": "proyecto-c-documentacion/7.8.1-Operaciones-sobre-cadenas.md",
+      "title": "7.8.1 Operaciones sobre Cadenas",
+      "order": 78
+    },
+    {
+      "slug": "c--7-8-2-prueba-y-conversion-de-clases-de-caracteres",
+      "file": "proyecto-c-documentacion/7.8.2-Prueba-y-conversion-de-clases-de-caracteres.md",
+      "title": "7.8.2 Prueba y Conversión de Clases de Caracteres",
+      "order": 79
+    },
+    {
+      "slug": "c--7-8-3-ungetc",
+      "file": "proyecto-c-documentacion/7.8.3-Ungetc.md",
+      "title": "7.8.3 ungetc",
+      "order": 80
+    },
+    {
+      "slug": "c--7-8-4-ejecucion-de-ordenes",
+      "file": "proyecto-c-documentacion/7.8.4-Ejecucion-de-ordenes.md",
+      "title": "7.8.4 Ejecución de Órdenes",
+      "order": 81
+    },
+    {
+      "slug": "c--7-8-5-administracion-del-almacenamiento",
+      "file": "proyecto-c-documentacion/7.8.5-Administracion-del-almacenamiento.md",
+      "title": "7.8.5 Administración del Almacenamiento",
+      "order": 82
+    },
+    {
+      "slug": "c--7-8-6-funciones-matematicas",
+      "file": "proyecto-c-documentacion/7.8.6-Funciones-matematicas.md",
+      "title": "7.8.6 Funciones Matemáticas",
+      "order": 83
+    },
+    {
+      "slug": "c--7-8-7-generacion-de-numeros-aleatorios",
+      "file": "proyecto-c-documentacion/7.8.7-Generacion-de-numeros-aleatorios.md",
+      "title": "7.8.7 Generación de Números Aleatorios",
+      "order": 84
+    },
+
+    {
+      "slug": "c--8-1-directivas-del-preprocesador",
+      "file": "proyecto-c-documentacion/8.1-Directivas-del-preprocesador.md",
+      "title": "8.1 Directivas del Preprocesador",
+      "order": 85
+    },
+    {
+      "slug": "c--8-2-macros",
+      "file": "proyecto-c-documentacion/8.2-Macros.md",
+      "title": "8.2 Macros",
+      "order": 86
+    },
+    {
+      "slug": "c--8-3-inclusion-de-archivos",
+      "file": "proyecto-c-documentacion/8.3-Inclusion-de-archivos.md",
+      "title": "8.3 Inclusión de Archivos",
+      "order": 87
+    },
+    {
+      "slug": "c--8-4-compilacion-condicional",
+      "file": "proyecto-c-documentacion/8.4-Compilacion-condicional.md",
+      "title": "8.4 Compilación Condicional",
+      "order": 88
+    },
+    {
+      "slug": "c--8-5-ejemplo-de-preprocesador",
+      "file": "proyecto-c-documentacion/8.5-Ejemplo-de-preprocesador.md",
+      "title": "8.5 Ejemplo de Preprocesador",
+      "order": 89
+    }
+  ]
+}

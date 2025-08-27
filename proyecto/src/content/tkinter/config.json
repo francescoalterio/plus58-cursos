@@ -1,0 +1,316 @@
+{
+  "courseId": "tkinter",
+  "title": "Interfaces Gráficas con Tkinter",
+  "summary": "Curso completo paso a paso para construir interfaces gráficas en Python con Tkinter.",
+  "order": 3,
+  "lessons": [
+    {
+      "slug": "tkinter--capitulo-0-1-que-es-una-interfaz-grafica",
+      "file": "contenido/Parte 0 - Preparación Suave/Capítulo 0.1 - Qué es una Interfaz Gráfica.md",
+      "title": "Capítulo 0.1 - Qué es una Interfaz Gráfica",
+      "order": 1
+    },
+    {
+      "slug": "tkinter--capitulo-0-2-verificando-el-entorno",
+      "file": "contenido/Parte 0 - Preparación Suave/Capítulo 0.2 - Verificando el Entorno.md",
+      "title": "Capítulo 0.2 - Verificando el Entorno",
+      "order": 2
+    },
+    {
+      "slug": "tkinter--capitulo-0-3-primer-script-minimo",
+      "file": "contenido/Parte 0 - Preparación Suave/Capítulo 0.3 - Primer Script Mínimo.md",
+      "title": "Capítulo 0.3 - Primer Script Mínimo",
+      "order": 3
+    },
+    {
+      "slug": "tkinter--capitulo-0-4-anatomia-de-la-ventana-principal",
+      "file": "contenido/Parte 0 - Preparación Suave/Capítulo 0.4 - Anatomía de la Ventana Principal.md",
+      "title": "Capítulo 0.4 - Anatomía de la Ventana Principal",
+      "order": 4
+    },
+
+    {
+      "slug": "tkinter--capitulo-1-1-primeros-widgets-label-y-button",
+      "file": "contenido/Parte 1 - Fundamentos Esenciales/Capítulo 1.1 - Primeros Widgets- Label y Button.md",
+      "title": "Capítulo 1.1 - Primeros Widgets: Label y Button",
+      "order": 5
+    },
+    {
+      "slug": "tkinter--capitulo-1-2-callbacks-y-comando-del-boton",
+      "file": "contenido/Parte 1 - Fundamentos Esenciales/Capítulo 1.2 - Callbacks y Comando del Botón.md",
+      "title": "Capítulo 1.2 - Callbacks y Comando del Botón",
+      "order": 6
+    },
+    {
+      "slug": "tkinter--capitulo-1-3-entrada-de-texto-simple",
+      "file": "contenido/Parte 1 - Fundamentos Esenciales/Capítulo 1.3 - Entrada de Texto Simple.md",
+      "title": "Capítulo 1.3 - Entrada de Texto Simple",
+      "order": 7
+    },
+    {
+      "slug": "tkinter--capitulo-1-4-organizacion-minima-con-frame",
+      "file": "contenido/Parte 1 - Fundamentos Esenciales/Capítulo 1.4 - Organización Mínima con Frame.md",
+      "title": "Capítulo 1.4 - Organización Mínima con Frame",
+      "order": 8
+    },
+    {
+      "slug": "tkinter--capitulo-1-5-widget-text",
+      "file": "contenido/Parte 1 - Fundamentos Esenciales/Capítulo 1.5 - Widget Text.md",
+      "title": "Capítulo 1.5 - Widget Text",
+      "order": 9
+    },
+
+    {
+      "slug": "tkinter--capitulo-2-1-profundizando-en-pack",
+      "file": "contenido/Parte 2 - Organización y Disposición/Capítulo 2.1 - Profundizando en pack.md",
+      "title": "Capítulo 2.1 - Profundizando en pack",
+      "order": 10
+    },
+    {
+      "slug": "tkinter--capitulo-2-2-introduccion-a-grid",
+      "file": "contenido/Parte 2 - Organización y Disposición/Capítulo 2.2 - Introducción a grid.md",
+      "title": "Capítulo 2.2 - Introducción a grid",
+      "order": 11
+    },
+    {
+      "slug": "tkinter--capitulo-2-3-buen-uso-combinado",
+      "file": "contenido/Parte 2 - Organización y Disposición/Capítulo 2.3 - Buen Uso Combinado.md",
+      "title": "Capítulo 2.3 - Buen Uso Combinado",
+      "order": 12
+    },
+    {
+      "slug": "tkinter--capitulo-2-4-variables-de-control",
+      "file": "contenido/Parte 2 - Organización y Disposición/Capítulo 2.4 - Variables de Control.md",
+      "title": "Capítulo 2.4 - Variables de Control",
+      "order": 13
+    },
+    {
+      "slug": "tkinter--capitulo-2-5-estilizando-lo-justo",
+      "file": "contenido/Parte 2 - Organización y Disposición/Capítulo 2.5 - Estilizando lo Justo.md",
+      "title": "Capítulo 2.5 - Estilizando lo Justo",
+      "order": 14
+    },
+
+    {
+      "slug": "tkinter--capitulo-3-1-estados-de-widgets",
+      "file": "contenido/Parte 3 - Interacción y Flujo/Capítulo 3.1 - Estados de Widgets.md",
+      "title": "Capítulo 3.1 - Estados de Widgets",
+      "order": 15
+    },
+    {
+      "slug": "tkinter--capitulo-3-2-dialogos-simples",
+      "file": "contenido/Parte 3 - Interacción y Flujo/Capítulo 3.2 - Diálogos Simples.md",
+      "title": "Capítulo 3.2 - Diálogos Simples",
+      "order": 16
+    },
+    {
+      "slug": "tkinter--capitulo-3-3-ventanas-secundarias",
+      "file": "contenido/Parte 3 - Interacción y Flujo/Capítulo 3.3 - Ventanas Secundarias.md",
+      "title": "Capítulo 3.3 - Ventanas Secundarias",
+      "order": 17
+    },
+    {
+      "slug": "tkinter--capitulo-3-4-menu-de-aplicacion-basico",
+      "file": "contenido/Parte 3 - Interacción y Flujo/Capítulo 3.4 - Menú de Aplicación Básico.md",
+      "title": "Capítulo 3.4 - Menú de Aplicación Básico",
+      "order": 18
+    },
+    {
+      "slug": "tkinter--capitulo-3-5-eventos-de-teclado-y-raton",
+      "file": "contenido/Parte 3 - Interacción y Flujo/Capítulo 3.5 - Eventos de Teclado y Ratón.md",
+      "title": "Capítulo 3.5 - Eventos de Teclado y Ratón",
+      "order": 19
+    },
+
+    {
+      "slug": "tkinter--capitulo-4-1-checkbutton-y-radiobutton",
+      "file": "contenido/Parte 4 - Widgets Intermedios y Funcionalidades Útiles/Capítulo 4.1 - Checkbutton y Radiobutton.md",
+      "title": "Capítulo 4.1 - Checkbutton y Radiobutton",
+      "order": 20
+    },
+    {
+      "slug": "tkinter--capitulo-4-2-listbox",
+      "file": "contenido/Parte 4 - Widgets Intermedios y Funcionalidades Útiles/Capítulo 4.2 - Listbox.md",
+      "title": "Capítulo 4.2 - Listbox",
+      "order": 21
+    },
+    {
+      "slug": "tkinter--capitulo-4-3-spinbox-y-scale",
+      "file": "contenido/Parte 4 - Widgets Intermedios y Funcionalidades Útiles/Capítulo 4.3 - Spinbox y Scale.md",
+      "title": "Capítulo 4.3 - Spinbox y Scale",
+      "order": 22
+    },
+    {
+      "slug": "tkinter--capitulo-4-4-scrollbar",
+      "file": "contenido/Parte 4 - Widgets Intermedios y Funcionalidades Útiles/Capítulo 4.4 - Scrollbar.md",
+      "title": "Capítulo 4.4 - Scrollbar",
+      "order": 23
+    },
+    {
+      "slug": "tkinter--capitulo-4-5-place",
+      "file": "contenido/Parte 4 - Widgets Intermedios y Funcionalidades Útiles/Capítulo 4.5 - place.md",
+      "title": "Capítulo 4.5 - place",
+      "order": 24
+    },
+    {
+      "slug": "tkinter--capitulo-4-6-organizacion-de-codigo-creciente",
+      "file": "contenido/Parte 4 - Widgets Intermedios y Funcionalidades Útiles/Capítulo 4.6 - Organización de Código Creciente.md",
+      "title": "Capítulo 4.6 - Organización de Código Creciente",
+      "order": 25
+    },
+
+    {
+      "slug": "tkinter--capitulo-5-1-canvas-basico",
+      "file": "contenido/Parte 5 - Dibujo y Dinamismo/Capítulo 5.1 - Canvas Básico.md",
+      "title": "Capítulo 5.1 - Canvas Básico",
+      "order": 26
+    },
+    {
+      "slug": "tkinter--capitulo-5-2-movimiento-simple",
+      "file": "contenido/Parte 5 - Dibujo y Dinamismo/Capítulo 5.2 - Movimiento Simple.md",
+      "title": "Capítulo 5.2 - Movimiento Simple",
+      "order": 27
+    },
+    {
+      "slug": "tkinter--capitulo-5-3-imagenes-sencillas",
+      "file": "contenido/Parte 5 - Dibujo y Dinamismo/Capítulo 5.3 - Imágenes Sencillas.md",
+      "title": "Capítulo 5.3 - Imágenes Sencillas",
+      "order": 28
+    },
+    {
+      "slug": "tkinter--capitulo-5-4-temporizacion-con-after",
+      "file": "contenido/Parte 5 - Dibujo y Dinamismo/Capítulo 5.4 - Temporización con after.md",
+      "title": "Capítulo 5.4 - Temporización con after",
+      "order": 29
+    },
+    {
+      "slug": "tkinter--capitulo-5-5-eventos-del-raton-en-canvas",
+      "file": "contenido/Parte 5 - Dibujo y Dinamismo/Capítulo 5.5 - Eventos del Ratón en Canvas.md",
+      "title": "Capítulo 5.5 - Eventos del Ratón en Canvas",
+      "order": 30
+    },
+
+    {
+      "slug": "tkinter--capitulo-6-1-no-bloquear-la-interfaz",
+      "file": "contenido/Parte 6 - Buenas Prácticas y Errores Comunes/Capítulo 6.1 - No Bloquear la Interfaz.md",
+      "title": "Capítulo 6.1 - No Bloquear la Interfaz",
+      "order": 31
+    },
+    {
+      "slug": "tkinter--capitulo-6-2-organizacion-del-codigo",
+      "file": "contenido/Parte 6 - Buenas Prácticas y Errores Comunes/Capítulo 6.2 - Organización del Código.md",
+      "title": "Capítulo 6.2 - Organización del Código",
+      "order": 32
+    },
+    {
+      "slug": "tkinter--capitulo-6-3-legibilidad-y-nombres",
+      "file": "contenido/Parte 6 - Buenas Prácticas y Errores Comunes/Capítulo 6.3 - Legibilidad y Nombres.md",
+      "title": "Capítulo 6.3 - Legibilidad y Nombres",
+      "order": 33
+    },
+    {
+      "slug": "tkinter--capitulo-6-4-manejo-de-errores-basico",
+      "file": "contenido/Parte 6 - Buenas Prácticas y Errores Comunes/Capítulo 6.4 - Manejo de Errores Básico.md",
+      "title": "Capítulo 6.4 - Manejo de Errores Básico",
+      "order": 34
+    },
+    {
+      "slug": "tkinter--capitulo-6-5-reutilizacion-y-pequenas-utilidades",
+      "file": "contenido/Parte 6 - Buenas Prácticas y Errores Comunes/Capítulo 6.5 - Reutilización y Pequeñas Utilidades.md",
+      "title": "Capítulo 6.5 - Reutilización y Pequeñas Utilidades",
+      "order": 35
+    },
+
+    {
+      "slug": "tkinter--capitulo-7-1-definicion-del-proyecto",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.1 - Definición del Proyecto.md",
+      "title": "Capítulo 7.1 - Definición del Proyecto",
+      "order": 36
+    },
+    {
+      "slug": "tkinter--capitulo-7-2-version-1-area-de-texto-y-botones",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.2 - Versión 1 – Área de Texto y Botones.md",
+      "title": "Capítulo 7.2 - Versión 1 – Área de Texto y Botones",
+      "order": 37
+    },
+    {
+      "slug": "tkinter--capitulo-7-3-version-2-menu-superior",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.3 - Versión 2 – Menú Superior.md",
+      "title": "Capítulo 7.3 - Versión 2 – Menú Superior",
+      "order": 38
+    },
+    {
+      "slug": "tkinter--capitulo-7-4-version-3-dialogos-de-confirmacion",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.4 - Versión 3 – Diálogos de Confirmación.md",
+      "title": "Capítulo 7.4 - Versión 3 – Diálogos de Confirmación",
+      "order": 39
+    },
+    {
+      "slug": "tkinter--capitulo-7-5-version-4-ventana-acerca-de",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.5 - Versión 4 – Ventana Acerca de.md",
+      "title": "Capítulo 7.5 - Versión 4 – Ventana Acerca de",
+      "order": 40
+    },
+    {
+      "slug": "tkinter--capitulo-7-6-version-5-mejoras-de-estilo",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.6 - Versión 5 – Mejoras de Estilo.md",
+      "title": "Capítulo 7.6 - Versión 5 – Mejoras de Estilo",
+      "order": 41
+    },
+    {
+      "slug": "tkinter--capitulo-7-7-version-6-scrollbar-en-el-texto",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.7 - Versión 6 – Scrollbar en el Texto.md",
+      "title": "Capítulo 7.7 - Versión 6 – Scrollbar en el Texto",
+      "order": 42
+    },
+    {
+      "slug": "tkinter--capitulo-7-8-version-7-refactor-con-clase",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.8 - Versión 7 – Refactor con Clase.md",
+      "title": "Capítulo 7.8 - Versión 7 – Refactor con Clase",
+      "order": 43
+    },
+    {
+      "slug": "tkinter--capitulo-7-9-version-8-pequenas-mejoras-finales",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.9 - Versión 8 – Pequeñas Mejoras Finales.md",
+      "title": "Capítulo 7.9 - Versión 8 – Pequeñas Mejoras Finales",
+      "order": 44
+    },
+    {
+      "slug": "tkinter--capitulo-7-10-revision-final-del-proyecto",
+      "file": "contenido/Parte 7 - Proyecto Guiado Incremental/Capítulo 7.10 - Revisión Final del Proyecto.md",
+      "title": "Capítulo 7.10 - Revisión Final del Proyecto",
+      "order": 45
+    },
+
+    {
+      "slug": "tkinter--capitulo-8-1-tabla-resumen-de-widgets-aprendidos",
+      "file": "contenido/Parte 8 - Referencia Rápida, Checklist y Próximos Pasos/Capítulo 8.1 - Tabla Resumen de Widgets Aprendidos.md",
+      "title": "Capítulo 8.1 - Tabla Resumen de Widgets Aprendidos",
+      "order": 46
+    },
+    {
+      "slug": "tkinter--capitulo-8-2-patrones-recurrentes",
+      "file": "contenido/Parte 8 - Referencia Rápida, Checklist y Próximos Pasos/Capítulo 8.2 - Patrones Recurrentes.md",
+      "title": "Capítulo 8.2 - Patrones Recurrentes",
+      "order": 47
+    },
+    {
+      "slug": "tkinter--capitulo-8-3-checklist-de-dominio",
+      "file": "contenido/Parte 8 - Referencia Rápida, Checklist y Próximos Pasos/Capítulo 8.3 - Checklist de Dominio.md",
+      "title": "Capítulo 8.3 - Checklist de Dominio",
+      "order": 48
+    },
+    {
+      "slug": "tkinter--capitulo-8-4-errores-tipicos-finales-y-soluciones-rapidas",
+      "file": "contenido/Parte 8 - Referencia Rápida, Checklist y Próximos Pasos/Capítulo 8.4 - Errores Típicos Finales y Soluciones Rápidas.md",
+      "title": "Capítulo 8.4 - Errores Típicos Finales y Soluciones Rápidas",
+      "order": 49
+    },
+    {
+      "slug": "tkinter--capitulo-8-5-proximos-pasos",
+      "file": "contenido/Parte 8 - Referencia Rápida, Checklist y Próximos Pasos/Capítulo 8.5 - Próximos Pasos.md",
+      "title": "Capítulo 8.5 - Próximos Pasos",
+      "order": 50
+    }
+  ]
+}
