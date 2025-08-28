@@ -29,6 +29,32 @@ A diferencia de `pack()`, `grid()` no depende del orden de colocación, sino de 
 - `row`, `column`: posición.
 - `sticky`: (opcional) alinea el widget dentro de su celda. Valores comunes iniciales: `"w"` (west/oeste/izquierda), `"e"` (east/derecha). Más adelante podrás usar combinaciones como `"we"`.
 
+### ¿Qué es exactamente `sticky`?
+
+Piensa que cada celda del grid es una cajita y tu widget es una pegatina (sticker) dentro de esa caja. El parámetro `sticky` indica hacia qué lados de la caja se “pega” el widget.
+
+Direcciones (usa letras tipo brújula en inglés):
+
+- `n` = norte (arriba)
+- `s` = sur (abajo)
+- `w` = oeste (izquierda)
+- `e` = este (derecha)
+
+Combinaciones:
+
+- `"w"`: se alinea a la izquierda.
+- `"e"`: se alinea a la derecha.
+- `"we"`: se estira horizontalmente ocupando todo el ancho disponible.
+- `"ns"`: se estira verticalmente.
+- `"nsew"`: se estira en ambas direcciones (si la fila/columna lo permiten con `weight`, eso viene después).
+
+Si NO pones `sticky`, el widget queda centrado en su celda con su tamaño mínimo.
+
+Resumen mental rápido:
+
+- Una letra: alineación.
+- Varias letras: alineación + expansión hacia esos lados.
+
 Ejemplo mínimo:
 
 ```python
@@ -49,6 +75,8 @@ entrada_edad.grid(row=1, column=1)
 
 ventana.mainloop()
 ```
+
+Prueba cambiando `sticky="w"` por `sticky="e"` o `sticky="we"` para ver la diferencia.
 
 ---
 
