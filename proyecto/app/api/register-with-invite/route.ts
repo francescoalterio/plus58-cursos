@@ -7,8 +7,15 @@ import { ensureUserCourse } from "../../../src/lib/user-repos";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { inviteId, email, password } = body;
-    if (!inviteId || !email || !password)
+    const { inviteId, email, password, fullName, birthDate, idNumber } = body;
+    if (
+      !inviteId ||
+      !email ||
+      !password ||
+      !fullName ||
+      !birthDate ||
+      !idNumber
+    )
       return NextResponse.json({ error: "Datos incompletos" }, { status: 400 });
     // Validar y consumir invitación
     const invite = await consumeInvite(inviteId).catch((e) => ({
@@ -20,7 +27,11 @@ export async function POST(request: Request) {
     const auth = firebaseAuth();
     const cred = await createUserWithEmailAndPassword(auth, email, password);
     // Crear/asegurar acceso de curso en doc users/{uid}
-    await ensureUserCourse(cred.user.uid, email, (invite as any).courseId);
+    await ensureUserCourse(cred.user.uid, email, (invite as any).courseId, {
+      fullName,
+      birthDate,
+      idNumber,
+    });
 
     return NextResponse.json({ userId: cred.user.uid });
   } catch (e: any) {

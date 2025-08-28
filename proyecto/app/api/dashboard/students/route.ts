@@ -16,6 +16,20 @@ export async function GET(request: Request) {
     const d = doc.data();
     if (!d.courseAccess) return;
     if (courseId && !d.courseAccess[courseId]) return;
+    const createdAtRaw: any = d.createdAt;
+    let createdAt: number | undefined = undefined;
+    if (createdAtRaw) {
+      // Firestore Timestamp => has toMillis
+      if (typeof createdAtRaw.toMillis === "function") {
+        try {
+          createdAt = createdAtRaw.toMillis();
+        } catch {}
+      } else if (typeof createdAtRaw === "number") {
+        createdAt = createdAtRaw;
+      } else if (createdAtRaw._seconds) {
+        createdAt = createdAtRaw._seconds * 1000;
+      }
+    }
     // Expandir cada cursoAccess en entradas separadas
     Object.entries(d.courseAccess).forEach(([cid, ca]: any) => {
       if (courseId && cid !== courseId) return;
@@ -23,9 +37,13 @@ export async function GET(request: Request) {
         id: `${doc.id}_${cid}`,
         userId: doc.id,
         email: d.email,
+        fullName: d.profile?.fullName || null,
+        birthDate: d.profile?.birthDate || null,
+        idNumber: d.profile?.idNumber || null,
         courseId: cid,
         state: ca.state,
         unlockedLessonIds: ca.unlockedLessons || [],
+        createdAt,
       });
     });
   });

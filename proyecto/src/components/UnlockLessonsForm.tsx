@@ -12,6 +12,8 @@ interface Props {
   lessons: LessonMeta[];
   compact?: boolean;
   unlockedLessonIds?: string[];
+  onUnlocked?: (slug: string) => void;
+  onBusy?: (busy: boolean) => void;
 }
 
 export function UnlockLessonsForm({
@@ -20,6 +22,8 @@ export function UnlockLessonsForm({
   lessons,
   compact,
   unlockedLessonIds = [],
+  onUnlocked,
+  onBusy,
 }: Props) {
   const [slug, setSlug] = useState("");
   const [status, setStatus] = useState<string | null>(null);
@@ -29,6 +33,7 @@ export function UnlockLessonsForm({
     e.preventDefault();
     if (!slug.trim()) return;
     setLoading(true);
+    onBusy?.(true);
     setStatus(null);
     let finalSlug = slug.trim();
     if (!finalSlug.includes("--")) {
@@ -43,11 +48,14 @@ export function UnlockLessonsForm({
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Error");
       setStatus("Ok");
+      const doneSlug = finalSlug;
       setSlug("");
+      onUnlocked?.(doneSlug);
     } catch (e: any) {
       setStatus(e.message || "Error");
     } finally {
       setLoading(false);
+      onBusy?.(false);
     }
   }
 

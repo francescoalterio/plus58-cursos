@@ -1,15 +1,15 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface SessionData {
   authenticated: boolean;
   email?: string;
+  isProfessor?: boolean;
 }
 
 export default function SessionActions() {
   const [session, setSession] = useState<SessionData | null>(null);
-  const router = useRouter();
   const mounted = useRef(true);
   const pathname = usePathname();
 
@@ -57,12 +57,6 @@ export default function SessionActions() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  async function logout() {
-    await fetch("/api/auth/logout", { method: "POST" });
-    setSession({ authenticated: false });
-    router.push("/");
-  }
-
   if (!session) return <span className="text-xs text-neutral-500">...</span>;
   if (!session.authenticated)
     return (
@@ -75,21 +69,21 @@ export default function SessionActions() {
     );
   return (
     <div className="flex items-center gap-3 text-sm">
-      {session.authenticated && session.email && (
-        <span
-          className="text-neutral-400 hidden sm:inline"
-          title={session.email}
+      {session.isProfessor && (
+        <a
+          href="/dashboard"
+          className="text-xs sm:text-sm px-3 py-1.5 rounded-md bg-brand/15 border border-brand/40 text-brand hover:bg-brand/25 hover:border-brand transition shadow-sm"
         >
-          {session.email}
-        </span>
+          Dashboard
+        </a>
       )}
-      <button
-        onClick={logout}
-        className="text-xs sm:text-sm px-3 py-1.5 rounded-md bg-red-500/15 border border-red-500/40 text-red-400 hover:bg-red-500/25 hover:border-red-500 transition shadow-sm"
-        title="Cerrar sesión"
+      <a
+        href="/perfil"
+        className="max-w-[220px] truncate text-xs sm:text-sm px-3 py-1.5 rounded-md bg-neutral-800/70 border border-neutral-700 text-neutral-200 hover:border-brand hover:text-brand transition shadow-sm"
+        title={session.email}
       >
-        Salir
-      </button>
+        {session.email || "Perfil"}
+      </a>
     </div>
   );
 }

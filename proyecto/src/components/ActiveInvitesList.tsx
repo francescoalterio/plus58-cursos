@@ -47,6 +47,12 @@ export function ActiveInvitesList({ courseId }: { courseId?: string }) {
     load();
   }, [courseId]);
 
+  useEffect(() => {
+    const handler = () => load();
+    window.addEventListener("invites-updated", handler);
+    return () => window.removeEventListener("invites-updated", handler);
+  }, []);
+
   if (loading)
     return (
       <div className="text-xs text-neutral-500">Cargando invitaciones...</div>
@@ -98,10 +104,16 @@ export function ActiveInvitesList({ courseId }: { courseId?: string }) {
                   <span className="text-green-500">Quedan {remaining}</span>
                 )}
               </div>
-              <div className="break-all text-neutral-500">
-                <a href={url} className="hover:text-brand">
-                  {url}
-                </a>
+              <div className="flex flex-col gap-1">
+                <div className="break-all text-neutral-500">
+                  <a href={url} className="hover:text-brand">
+                    {url}
+                  </a>
+                </div>
+                <div className="flex gap-2">
+                  <CopyButton text={url} label="Copiar URL" />
+                  <CopyButton text={inv.id} label="Copiar ID" small />
+                </div>
               </div>
             </li>
           );
@@ -111,5 +123,37 @@ export function ActiveInvitesList({ courseId }: { courseId?: string }) {
         Refrescar
       </button>
     </div>
+  );
+}
+
+function CopyButton({
+  text,
+  label,
+  small,
+}: {
+  text: string;
+  label: string;
+  small?: boolean;
+}) {
+  const [copied, setCopied] = useState(false);
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1200);
+    } catch {}
+  }
+  return (
+    <button
+      onClick={copy}
+      className={`px-2 py-0.5 rounded border text-[10px] transition ${
+        copied
+          ? "bg-brand text-neutral-900 border-brand"
+          : "bg-neutral-800 text-neutral-300 border-neutral-700 hover:border-brand hover:text-brand"
+      } ${small ? "px-1.5" : ""}`}
+      title={label}
+    >
+      {copied ? "Copiado" : label}
+    </button>
   );
 }

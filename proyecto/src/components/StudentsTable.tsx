@@ -12,9 +12,13 @@ interface StudentRow {
   id: string; // userId_courseId
   userId: string;
   email?: string;
+  fullName?: string | null;
+  birthDate?: string | null;
+  idNumber?: string | null;
   courseId: string;
   state: string;
   unlockedLessonIds: string[];
+  createdAt?: number;
 }
 
 export default function StudentsTable() {
@@ -23,6 +27,65 @@ export default function StudentsTable() {
   const [courseData, setCourseData] = useState<CourseLite[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+  const [busyUsers, setBusyUsers] = useState<Record<string, number>>({});
+
+  function markBusy(userId: string, delta: number) {
+    setBusyUsers((prev) => {
+      const current = prev[userId] || 0;
+      const next = current + delta;
+      const clone = { ...prev };
+      if (next <= 0) delete clone[userId];
+      else clone[userId] = next;
+      return clone;
+    });
+  }
+
+  // Helpers in-component
+  async function changeState(userId: string, courseId: string, state: string) {
+    try {
+      markBusy(userId, 1);
+      const res = await fetch("/api/dashboard/students/state", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId, courseId, state }),
+      });
+      if (!res.ok) return;
+      setRows((prev) =>
+        prev.map((r) =>
+          r.userId === userId && r.courseId === courseId ? { ...r, state } : r
+        )
+      );
+    } catch (e) {
+      console.error(e);
+    } finally {
+      markBusy(userId, -1);
+    }
+  }
+
+  async function deleteUser(userId: string) {
+    try {
+      if (
+        !confirm(
+          "¿Eliminar usuario permanentemente? Esta acción no se puede deshacer."
+        )
+      )
+        return;
+      markBusy(userId, 1);
+      const res = await fetch(
+        `/api/dashboard/students/delete?userId=${encodeURIComponent(userId)}`,
+        { method: "DELETE" }
+      );
+      if (!res.ok) {
+        alert("Error eliminando usuario");
+        return;
+      }
+      setRows((prev) => prev.filter((r) => r.userId !== userId));
+    } catch (e) {
+      console.error(e);
+    } finally {
+      markBusy(userId, -1);
+    }
+  }
 
   useEffect(() => {
     (async () => {
@@ -60,7 +123,13 @@ export default function StudentsTable() {
     grouped[r.userId].push(r);
   });
 
-  const users = Object.keys(grouped).sort();
+  const users = Object.keys(grouped).sort((a, b) => {
+    // Tomar la fecha más reciente entre sus courseAccess (todas comparten mismo createdAt de usuario)
+    const aCreated = grouped[a][0]?.createdAt || 0;
+    const bCreated = grouped[b][0]?.createdAt || 0;
+    // Más nuevos primero (desc)
+    return bCreated - aCreated || b.localeCompare(a); // fallback determinista
+  });
 
   return (
     <div className="space-y-4">
@@ -69,16 +138,41 @@ export default function StudentsTable() {
           a.courseId.localeCompare(b.courseId)
         );
         const email = courses[0]?.email;
+        const fullName = courses[0]?.fullName;
+        const birthDate = courses[0]?.birthDate;
+        const idNumber = courses[0]?.idNumber;
+        const age = birthDate
+          ? (() => {
+              const d = new Date(birthDate);
+              if (isNaN(d.getTime())) return null;
+              const now = new Date();
+              let a = now.getFullYear() - d.getFullYear();
+              const m = now.getMonth() - d.getMonth();
+              if (m < 0 || (m === 0 && now.getDate() < d.getDate())) a--;
+              return a;
+            })()
+          : null;
         const totalUnlocked = courses.reduce(
           (acc, c) => acc + (c.unlockedLessonIds?.length || 0),
           0
         );
         const isOpen = expanded[uid];
+        const isBusy = !!busyUsers[uid];
         return (
           <div
             key={uid}
-            className="border border-neutral-800 rounded-lg overflow-hidden"
+            className="relative border border-neutral-800 rounded-lg overflow-hidden"
           >
+            {isBusy && (
+              <div className="absolute inset-0 z-20 flex items-center justify-center backdrop-blur-[1px] bg-neutral-900/70">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="w-6 h-6 border-2 border-brand border-t-transparent rounded-full animate-spin" />
+                  <span className="text-[10px] text-neutral-400">
+                    Guardando...
+                  </span>
+                </div>
+              </div>
+            )}
             <div className="flex items-center justify-between gap-4 px-3 py-2 bg-neutral-900/60">
               <div className="flex items-center gap-4 min-w-0">
                 <button
@@ -91,12 +185,37 @@ export default function StudentsTable() {
                   <p className="font-mono text-[11px] truncate" title={uid}>
                     {uid}
                   </p>
+                  {fullName && (
+                    <p
+                      className="text-[11px] text-neutral-300 truncate"
+                      title={fullName}
+                    >
+                      {fullName}
+                    </p>
+                  )}
+                  {courses[0]?.createdAt && (
+                    <p
+                      className="text-[10px] text-neutral-600"
+                      title="Fecha de creación"
+                    >
+                      {new Date(courses[0].createdAt).toLocaleDateString()}
+                    </p>
+                  )}
                   <p
                     className="text-[11px] text-neutral-400 truncate"
                     title={email}
                   >
                     {email || "(sin email)"}
                   </p>
+                  <div className="flex flex-wrap gap-2 text-[10px] text-neutral-500">
+                    {birthDate && (
+                      <span title="Fecha de nacimiento">
+                        {new Date(birthDate).toLocaleDateString()}
+                      </span>
+                    )}
+                    {age !== null && <span title="Edad">{age} años</span>}
+                    {idNumber && <span title="Cédula">{idNumber}</span>}
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-3 flex-wrap">
@@ -110,6 +229,22 @@ export default function StudentsTable() {
                   userId={uid}
                   courses={courseData}
                   owned={courses.map((c) => c.courseId)}
+                  onAdded={(cid) => {
+                    markBusy(uid, 1); // marcar mientras simulamos guardado instantáneo
+                    // Recuperar las lecciones para el curso agregado (sin desbloqueos iniciales, estado por defecto 'inactivo')
+                    setRows((prev) => [
+                      ...prev,
+                      {
+                        id: `${uid}_${cid}`,
+                        userId: uid,
+                        email: email,
+                        courseId: cid,
+                        state: "inactivo",
+                        unlockedLessonIds: [],
+                      },
+                    ]);
+                    setTimeout(() => markBusy(uid, -1), 150); // liberar rápido
+                  }}
                 />
               </div>
             </div>
@@ -194,12 +329,44 @@ export default function StudentsTable() {
                                       c.unlockedLessonIds || []
                                     }
                                     compact
+                                    onUnlocked={(slug) => {
+                                      setRows((prev) =>
+                                        prev.map((r) =>
+                                          r.id === c.id
+                                            ? {
+                                                ...r,
+                                                unlockedLessonIds: [
+                                                  ...r.unlockedLessonIds,
+                                                  slug,
+                                                ],
+                                              }
+                                            : r
+                                        )
+                                      );
+                                    }}
+                                    onBusy={(b) => markBusy(uid, b ? 1 : -1)}
                                   />
                                   <UnlockNextButton
                                     userId={c.userId}
                                     courseId={c.courseId}
                                     lessons={lessons}
                                     unlocked={c.unlockedLessonIds || []}
+                                    onUnlocked={(slug) => {
+                                      setRows((prev) =>
+                                        prev.map((r) =>
+                                          r.id === c.id
+                                            ? {
+                                                ...r,
+                                                unlockedLessonIds: [
+                                                  ...r.unlockedLessonIds,
+                                                  slug,
+                                                ],
+                                              }
+                                            : r
+                                        )
+                                      );
+                                    }}
+                                    onBusy={(b) => markBusy(uid, b ? 1 : -1)}
                                   />
                                 </div>
                               );
@@ -230,50 +397,20 @@ export default function StudentsTable() {
   );
 }
 
-async function changeState(userId: string, courseId: string, state: string) {
-  try {
-    await fetch("/api/dashboard/students/state", {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ userId, courseId, state }),
-    });
-    // Optimistic reload
-    location.reload();
-  } catch (e) {
-    console.error(e);
-  }
-}
+// Eliminado: manejado dentro del componente usando setRows
 
-async function deleteUser(userId: string) {
-  try {
-    if (
-      !confirm(
-        "¿Eliminar usuario permanentemente? Esta acción no se puede deshacer."
-      )
-    )
-      return;
-    const res = await fetch(
-      `/api/dashboard/students/delete?userId=${encodeURIComponent(userId)}`,
-      { method: "DELETE" }
-    );
-    if (!res.ok) {
-      alert("Error eliminando usuario");
-      return;
-    }
-    location.reload();
-  } catch (e) {
-    console.error(e);
-  }
-}
+// Eliminado: manejado dentro del componente usando setRows
 
 function AddCourseForm({
   userId,
   courses,
   owned = [],
+  onAdded,
 }: {
   userId: string;
   courses: CourseLite[];
   owned?: string[];
+  onAdded: (courseId: string) => void;
 }) {
   const [courseId, setCourseId] = useState("");
   const [loading, setLoading] = useState(false);
@@ -292,8 +429,9 @@ function AddCourseForm({
       const json = await res.json();
       if (!res.ok) throw new Error(json.error || "Error");
       setStatus("Ok");
+      const added = courseId;
       setCourseId("");
-      setTimeout(() => location.reload(), 400);
+      onAdded(added);
     } catch (e: any) {
       setStatus(e.message);
     } finally {
@@ -340,11 +478,15 @@ function UnlockNextButton({
   courseId,
   lessons,
   unlocked,
+  onUnlocked,
+  onBusy,
 }: {
   userId: string;
   courseId: string;
   lessons: { slug: string; title: string }[];
   unlocked: string[];
+  onUnlocked: (slug: string) => void;
+  onBusy?: (busy: boolean) => void;
 }) {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<string | null>(null);
@@ -362,6 +504,7 @@ function UnlockNextButton({
   async function handle() {
     if (!next) return;
     setLoading(true);
+    onBusy?.(true);
     setStatus(null);
     const finalSlug = next.includes("--") ? next : `${courseId}--${next}`;
     try {
@@ -373,11 +516,12 @@ function UnlockNextButton({
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Error");
       setStatus("Ok");
-      setTimeout(() => location.reload(), 400);
+      onUnlocked(finalSlug);
     } catch (e: any) {
       setStatus(e.message || "Error");
     } finally {
       setLoading(false);
+      onBusy?.(false);
     }
   }
 

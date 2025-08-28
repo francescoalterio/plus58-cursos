@@ -5,6 +5,7 @@ import {
   listLessonsMeta,
 } from "../../../src/lib/content-fs";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { redirect } from "next/navigation";
 import { firestore } from "../../../src/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -116,14 +117,55 @@ export default async function LessonPage({ params }: Props) {
             Lección {idx + 1} de {allLessons.length}
           </div>
         </div>
-        <article className="prose prose-invert max-w-none prose-pre:bg-neutral-900 prose-pre:border prose-pre:border-neutral-800">
+        <article className="prose prose-invert max-w-none prose-pre:bg-neutral-900 prose-pre:border prose-pre:border-neutral-800 prose-table:border-collapse prose-th:px-3 prose-th:py-2 prose-td:px-3 prose-td:py-2">
           <h1>{lesson.title}</h1>
           <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
             rehypePlugins={[
               rehypeSlug,
               [rehypeAutolinkHeadings, { behavior: "wrap" }],
             ]}
             components={{
+              table(props) {
+                return (
+                  <div className="my-6 overflow-x-auto">
+                    <table className="min-w-full text-sm border border-neutral-800/70 divide-y divide-neutral-800/60">
+                      {props.children}
+                    </table>
+                  </div>
+                );
+              },
+              thead(props) {
+                return (
+                  <thead className="bg-neutral-900/50 text-neutral-300 uppercase text-[11px] tracking-wide">
+                    {props.children}
+                  </thead>
+                );
+              },
+              th(props) {
+                return (
+                  <th
+                    className="border-r border-neutral-800 last:border-r-0 font-medium"
+                    {...props}
+                  />
+                );
+              },
+              td(props) {
+                return (
+                  <td
+                    className="border-r border-neutral-800 last:border-r-0 align-top"
+                    {...props}
+                  />
+                );
+              },
+              tr(props) {
+                return (
+                  <tr
+                    className="hover:bg-neutral-900/40 transition"
+                    {...props}
+                  />
+                );
+              },
               code(props) {
                 const { children, className, ...rest } = props as any;
                 const codeText = String(children).replace(/\n$/, "");

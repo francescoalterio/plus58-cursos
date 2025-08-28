@@ -39,7 +39,15 @@ export default function InviteCreator({
       const id = data.invite.id;
       const base = window.location.origin;
       // Página existente: /(auth)/register usa query ?invite=
-      setUrl(`${base}/register?invite=${id}`);
+      const full = `${base}/register?invite=${id}`;
+      setUrl(full);
+      // Disparar evento para que listas activas se refresquen sin recargar toda la página
+      window.dispatchEvent(new CustomEvent("invites-updated"));
+      // Opcional: scroll al bloque
+      setTimeout(() => {
+        const el = document.getElementById("last-invite-url");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 50);
     } catch (e: any) {
       setError(e.message);
     } finally {
@@ -73,7 +81,10 @@ export default function InviteCreator({
         </button>
         {error && <p className="text-red-400">{error}</p>}
         {url && (
-          <div className="bg-neutral-900 border border-neutral-700 rounded p-2 break-all max-h-24 overflow-auto text-[11px]">
+          <div
+            id="last-invite-url"
+            className="bg-neutral-900 border border-neutral-700 rounded p-2 break-all max-h-24 overflow-auto text-[11px]"
+          >
             <p className="text-neutral-400">URL registro:</p>
             <p className="text-[11px] font-mono">{url}</p>
           </div>

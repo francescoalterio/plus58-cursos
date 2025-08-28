@@ -18,7 +18,8 @@ export interface UserDoc {
 export async function ensureUserCourse(
   userId: string,
   email: string,
-  courseId: string
+  courseId: string,
+  extra?: { fullName?: string; birthDate?: string; idNumber?: string }
 ) {
   // Intentar Admin SDK primero (ignora reglas). Si falla (no service account), fallback a cliente.
   try {
@@ -33,6 +34,14 @@ export async function ensureUserCourse(
           [courseId]: { state: "activo", unlockedLessons: [] },
         },
         createdAt: new Date(),
+        ...((extra && {
+          profile: {
+            fullName: extra.fullName || null,
+            birthDate: extra.birthDate || null,
+            idNumber: extra.idNumber || null,
+          },
+        }) ||
+          {}),
       });
       return;
     }
@@ -63,6 +72,14 @@ export async function ensureUserCourse(
           [courseId]: { state: "activo", unlockedLessons: [] },
         },
         createdAt: new Date(),
+        ...((extra && {
+          profile: {
+            fullName: extra.fullName || null,
+            birthDate: extra.birthDate || null,
+            idNumber: extra.idNumber || null,
+          },
+        }) ||
+          {}),
       });
       return;
     }
@@ -96,28 +113,11 @@ export async function updateUserCourseState(
   try {
     const adb: any = adminFirestore();
     const ref = adb.collection("users").doc(userId);
-    if (state === "graduado") {
-      // Al graduar desbloqueamos todas las lecciones actuales del curso.
-      const allLessonSlugs = listLessonsMeta(courseId).map((l) => l.slug);
-      await ref.update({
-        [`courseAccess.${courseId}.state`]: state,
-        [`courseAccess.${courseId}.unlockedLessons`]: allLessonSlugs,
-      });
-    } else {
-      await ref.update({ [`courseAccess.${courseId}.state`]: state });
-    }
+    await ref.update({ [`courseAccess.${courseId}.state`]: state });
   } catch {
     const db = firestore();
     const ref = doc(db, "users", userId);
-    if (state === "graduado") {
-      const allLessonSlugs = listLessonsMeta(courseId).map((l) => l.slug);
-      await updateDoc(ref, {
-        [`courseAccess.${courseId}.state`]: state,
-        [`courseAccess.${courseId}.unlockedLessons`]: allLessonSlugs,
-      });
-    } else {
-      await updateDoc(ref, { [`courseAccess.${courseId}.state`]: state });
-    }
+    await updateDoc(ref, { [`courseAccess.${courseId}.state`]: state });
   }
 }
 
